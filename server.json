@@ -5,7 +5,7 @@
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Venda",
-      "price":"7997",
+      "price": 7997,
       "createdAt": "2023-04-14T09:23:55.264Z"
     },
     {
@@ -13,8 +13,40 @@
       "description": "Hamburger",
       "type": "outcome",
       "category": "Alimentação",
-      "price":"37",
+      "price": 37,
       "createdAt": "2023-04-14T09:05:59.264Z"
+    },
+    {
+      "description": "Devclub",
+      "price": 1997,
+      "category": "Educação",
+      "type": "outcome",
+      "createdAt": "2023-04-15T10:56:04.806Z",
+      "id": 3
+    },
+    {
+      "description": "RocketSeat",
+      "price": 2997,
+      "category": "Educação",
+      "type": "outcome",
+      "createdAt": "2023-04-15T10:56:10.146Z",
+      "id": 4
+    },
+    {
+      "description": "Pastel",
+      "price": 12,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-04-15T11:16:11.128Z",
+      "id": 5
+    },
+    {
+      "description": "App",
+      "price": 7000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-15T11:20:25.417Z",
+      "id": 6
     }
   ]
 }

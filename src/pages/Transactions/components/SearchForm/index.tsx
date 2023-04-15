@@ -1,8 +1,11 @@
 import { MagnifyingGlass } from 'phosphor-react'
+import { useContextSelector } from 'use-context-selector'
 import { SearchFormContainer } from './styles'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { TransactionContext } from '../../../../contexts/TransactionsContext'
+import { memo } from 'react'
 
 const searchFormSchema = z.object({
   query: z.string(),
@@ -10,7 +13,14 @@ const searchFormSchema = z.object({
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
-export function SearchForm() {
+function SearchFormComponent() {
+  const fetchTransactions = useContextSelector(
+    TransactionContext,
+    (context) => {
+      return context.fetchTransactions
+    },
+  )
+
   const {
     register,
     handleSubmit,
@@ -21,9 +31,7 @@ export function SearchForm() {
 
   // colocando um tempo para resolver uma promisse para ver o isSubmitting
   async function handleSearchTransactions(data: SearchFormInputs) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    console.log(data)
+    await fetchTransactions(data.query)
   }
 
   return (
@@ -39,3 +47,7 @@ export function SearchForm() {
     </SearchFormContainer>
   )
 }
+
+export const SearchForm = memo(SearchFormComponent)
+
+// o memo aqui não é recomentado por se tratar de um html simples. Estou deixando aqui apenas para fins educativos.
