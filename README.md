@@ -165,4 +165,4 @@ A web project is never completed, it is abandoned!
 
 The [MIT License]() (MIT)
 
-Copyright :copyright: 2023 - Tasks and Timer
+Copyright :copyright: 2023 - Controle financeiro
